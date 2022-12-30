@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: English-to-Hindi
+Version: 0.0.1
+Summary: This module helps in converting English sentences to Hindi
+Home-page: UNKNOWN
+Author: Anuj kumar
+Author-email: kumaranuj01596@gmail.com
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+This module help in converting English text to Hindi language
+
+USE_CASE:
+you need to provide the string inside eth function which you want to convert to Hindi language.
+
+e.g.
+t=eth('Hello, how are you')
+print(t)
+

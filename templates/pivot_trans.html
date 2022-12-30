@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="row pt-3 ml-3">
+    <div><h3>Original Documents: ( Hindi )</h3></div>
+    {% for j in docs %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><u><i>Document1</i></u></h5>
+          <p class="card-text">{{j}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<br>
+<h5>------------------Process-------------------</h5>
+<br>
+<table class="table table-borderless">
+    <tr>
+        <th>
+            <h5> <u>Step 1 : Query input ( French Lang )</u></h5>
+            <br>
+            <form action="/pt" method="POST">
+    
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example1">Query:</label>
+                    &nbsp;&nbsp;
+                    <input type="text" id="form2Example1"  name="query" size="60"/>
+                </div>
+                <input type="submit" class="btn btn-primary btn-block mb-4"/>
+            </form>
+        </th>
+        {% if dt_query!="none" %}
+        <th><div class="container">
+            <h5> <u>Step 2 : Document and Query translation (English)</u></h5>
+            <br>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title"><u><i>New Query</i></u></h5>
+                      <p class="card-text">{{dt_query}}</p>
+                    </div>
+                  </div>
+            <br>
+            <div class="row">
+                {% for data in eng_docs %}
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><u><i>New Docs</i></u></h5>
+                            <p class="card-text">{{data}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+                  
+            </div>
+        </th> 
+        <tr>
+            <th><div class="container">
+                <h5><u> Step 3 : Document searching</u></h5>
+                <br>
+                    <div class="column">
+                    {% if result|length==0 %}
+                        <h3>None!</h3>
+        
+                    {% else %}
+                        {% for data in result_doc %}
+                            <h4>Doucment {{data+1}} has matching with query!</h4><br>
+                        {% endfor %}
+                    
+                    {% endif %}
+
+                    </div>
+            </div>
+            </th>
+            <th><div class="container">
+                <h5><u> Step 4 : Document Retrieved (French)</u></h5>
+                <br>
+                <div class="row">
+
+                    {% if result|length==0 %}
+                        <h3>No Matching Found!</h3>
+        
+                    {% else %}
+                        {% for data in result %}
+                        
+                            <h4>{{loop.index}} : {{data}}</h4><br>
+                        
+                        {% endfor %}
+                    
+                    {% endif %}
+                
+            
+                
+                </div>
+            </div>
+            </th>
+        </tr>
+        {% endif %}
+       
+    </tr>
+</table>
+{% endblock body %}

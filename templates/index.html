@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block body %}<br><br>
+
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Different Forms of CLIR systems</h2>
+<div class="container-fluid">
+  <div class="row" style="margin: 50px;">
+    <div class="column" style="float: left; width: 25%; padding: 0 10px;">
+<div class="card" style="width: 18rem; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); padding: 12px;">
+  <img src="/static/dt2.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Document Translation</h5>
+    <p class="card-text">Document translation is to map the document representation into the query representation space</p>
+    <a href="/dt" class="btn btn-primary">View Model ></a>
+  </div>
+</div>
+</div>
+<div class="column" style="float: left; width: 25%; padding: 0 10px;">
+<div class="card mt-5" style="width: 18rem; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); padding: 12px;">
+  <img src="/static/qt.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Query Translation</h5>
+    <p class="card-text">Query translation is to map the query representation into the document representation space</p>
+    <a href="/qt" class="btn btn-primary">View Model ></a>
+  </div>
+</div>
+</div>
+<div class="column" style="float: left; width: 25%; padding: 0 10px;">
+<div class="card" style="width: 18rem; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); padding: 12px;">
+  <img src="/static/pt.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Pivot Language</h5>
+    <p class="card-text">Pivot language or Interlingua is to map both document and query representations to a third space.</p>
+    <a href="/pt" class="btn btn-primary">View Model ></a>
+  </div>
+</div>
+<div>
+</div>
+</div>
+
+{% endblock body %}
